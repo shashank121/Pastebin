@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastebin Clone</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-family: monospace;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    input[type="number"] {
+      padding: 8px;
+      width: 100%;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pastebin Clone</h1>
+    <form action="/create" method="POST">
+      <label for="content">Paste your text/code below:</label>
+      <textarea name="content" id="content" placeholder="Enter your code or text..." required></textarea>
+
+      <label>
+        <input type="checkbox" name="isPrivate"> Make this paste private
+      </label>
+
+      <label for="expiry">Expiration time (in minutes):</label>
+      <input type="number" name="expiry" id="expiry" min="1">
+
+      <button type="submit">Create Paste</button>
+    </form>
+  </div>
+</body>
+</html>
